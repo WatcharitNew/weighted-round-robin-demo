@@ -4,9 +4,12 @@ import express from "express";
 const app = express();
 const PORT = 3003;
 
+let count = 0;
+
 // Create the simple `GET` API
 app.get("/", (req, res) => {
-  res.send("Response from Server C");
+  count += 1;
+  res.send(`Response from Server C total count: ${count}`);
 });
 
 // Listen to the request at PORT 3003
