@@ -4,9 +4,12 @@ import express from "express";
 const app = express();
 const PORT = 3002;
 
+let count = 0;
+
 // Create the simple `GET` API
 app.get("/", (req, res) => {
-  res.send("Response from Server B");
+  count += 1;
+  res.send(`Response from Server B total count: ${count}`);
 });
 
 // Listen to the request at PORT 3002
